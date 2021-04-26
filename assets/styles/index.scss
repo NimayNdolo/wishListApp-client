@@ -1,1 +1,35 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+.shadow {
+  width: 700px;
+}
+
+.mainbox {
+  display: flex;
+  margin-left: 30%;
+}
+
+#mainboxchild {
+  background: rgba(205, 83, 52, .4);
+}
+
+.maintitle {
+  font-family: 'Prata', serif;
+  font-size: 100px;
+  margin-left: 27%;
+}
+
+input {
+  width: 300px;
+}
+
+ul {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.viewBox {
+  padding: 200px;
+  margin-left: 50%;
+}

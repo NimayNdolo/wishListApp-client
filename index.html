@@ -1,17 +1,75 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>W I S H L I S T Y</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <br>
+
+      <h1 class="maintitle">W I S H L I S T Y</h1>
+
+      <ul class="navbar">
+        <li><button id="signOut">Sign Out</button></li>
+        <li><button id="changePassword">Change Password</button></li>
+      </ul>
+
+      <br>
+
+      <ul>
+          <li>
+              <form id="addItem">
+                  <input name="list[item]" type="text" placeholder="Add to Your List!" required>
+                  <button id="add">+</button>
+                </form>
+          </li>
+
+          <li>
+              <form id="deleteItem">
+                  <input name="list[item]" type="text" placeholder="Item iD here" required>
+                  <button id="delete"> - </button>
+            </form>
+        </li>
+    </ul>
+
+      <div class="mainbox">
+      <div class="shadow p-3 mb-5 bg-white" id="mainboxchild">
+          <form id="signUp">
+            <input name="credentials[email]" type="text" placeholder="Email" required>
+            <br>
+            <input name="credentials[password]" type="password" placeholder="Password" required>
+            <br>
+            <input name="credentials[password_confirmation]" type="password" placeholder="Re-type password" required>
+            <br>
+            <br>
+            <button>Sign Up</button>
+          </form>
+
+          <br>
+
+          <form id="signIn">
+            <input name="credentials[email]" type="text" placeholder="Email" required>
+            <br>
+            <input name="credentials[password]" type="password" placeholder="Password" required>
+            <br>
+            <br>
+            <button>Sign In</button>
+          </form>
+
+        </div>
+      </div>
+
+      <div id="viewBox">
+      <div class="shadow p-3 mb-5 bg-white" id="viewItem">
+          <h3>My List</h3>
+      </div>
+      </div>
+
     </body>
 </html>
