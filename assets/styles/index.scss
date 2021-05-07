@@ -1,6 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 
+body {
+  background: rgb(23,190,187);
+  background: linear-gradient(311deg, rgba(23,190,187,1) 50%, rgba(255,255,255,1) 100%);
+}
+
 .shadow {
   width: 700px;
 }
@@ -32,4 +37,16 @@ ul {
 .viewBox {
   padding: 200px;
   margin-left: 50%;
+}
+
+#viewItems {
+  display: flex;
+  flex-flow: row-wrap;
+  width: 80vw;
+}
+
+.items-view {
+  border: solid 1px red;
+  padding: 20px;
+  width: 30vw;
 }

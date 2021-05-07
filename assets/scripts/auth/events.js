@@ -28,23 +28,37 @@ const onSignOut = function (event) {
     .catch(ui.onError)
 }
 
-const onViewListSuccess = function (event) {
-  event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
-  console.log(formData)
-  api.show(formData.lists.id)
-    .then(ui.onViewListSuccess)
-    .catch(ui.onError)
-}
-
 const onChangePassword = function (event) {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  const id = formData.book.id
-  api.update(id, formData)
-    .then(ui.onUpdateSuccess)
+  console.log(formData)
+  api.changePassword(formData)
+    .then(ui.onChangePassword)
+    .catch(ui.onError)
+}
+
+const onViewAllItems = function (event) {
+  event.preventDefault()
+  api.viewAllItems()
+    .then(ui.onViewItemSuccess)
+    .catch(ui.onError)
+}
+
+const onAddItem = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.addItem(formData)
+    .then(ui.onAddItemSuccess)
+    .catch(ui.onError)
+}
+
+const onDeleteItem = function (event) {
+  event.preventDefault()
+  const id = $(event.target).data('id')
+  api.deleteItem(id)
+    .then(ui.onDeleteItemSuccess)
     .catch(ui.onError)
 }
 
@@ -52,6 +66,8 @@ module.exports = {
   onSignIn,
   onSignUp,
   onSignOut,
-  onViewListSuccess,
-  onChangePassword
+  onViewAllItems,
+  onChangePassword,
+  onDeleteItem,
+  onAddItem
 }

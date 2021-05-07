@@ -1,6 +1,8 @@
 const config = require('../config')
 const store = require('../store')
 
+// AUTH
+
 const signUp = function (formData) {
   return $.ajax({
     method: 'POST',
@@ -27,33 +29,68 @@ const signOut = function () {
   })
 }
 
+const changePassword = function (formData) {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/change-password',
+    data: formData,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
+// LIST
+
 const viewItem = function (id) {
   return $.ajax({
     method: 'GET',
-    url: config.apiUrl + '/lists/' + id
+    url: config.apiUrl + '/lists/' + id,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
   })
 }
 
-const changePassword = function (id, formData) {
+const viewAllItems = function () {
   return $.ajax({
-    method: 'PATCH',
-    url: config.apiUrl + '/lists/' + id,
-    data: formData
+    method: 'GET',
+    url: config.apiUrl + '/lists/',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
   })
 }
 
-const addItem = function (id, formData) {
+const addItem = function (formData) {
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/lists/',
+    data: formData,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
+const updateItem = function (id, formData) {
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/lists/' + id,
-    data: formData
+    data: formData,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
   })
 }
 
 const deleteItem = function (id) {
   return $.ajax({
     method: 'DELETE',
-    url: config.apiUrl + '/lists/' + id
+    url: config.apiUrl + '/lists/' + id,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
   })
 }
 
@@ -61,8 +98,10 @@ module.exports = {
   signUp,
   signIn,
   signOut,
+  changePassword,
   viewItem,
+  updateItem,
   addItem,
   deleteItem,
-  changePassword
+  viewAllItems
 }

@@ -17,29 +17,70 @@
 
       <ul class="navbar">
         <li><button id="signOut">Sign Out</button></li>
-        <li><button id="changePassword">Change Password</button></li>
+        <div id="signout-success"></div>
+        <div id="signout-success-message"></div>
+        <div class="error-message"></div>
       </ul>
 
       <br>
+
+<!-- USER ITEM FORMS -->
 
       <ul>
           <li>
               <form id="addItem">
                   <input name="list[item]" type="text" placeholder="Add to Your List!" required>
-                  <button id="add">+</button>
+                  <button id="add">add</button>
                 </form>
+
+                <div id="item-add-message"></div>
           </li>
 
-          <li>
-              <form id="deleteItem">
-                  <input name="list[item]" type="text" placeholder="Item iD here" required>
-                  <button id="delete"> - </button>
-            </form>
+        <li>
+          <form id="updateItem">
+            <input name="list[id]" type="text" placeholder="item ID" required>
+            <input name="list[item]" type="text" placeholder="item name" required>
+            <button>update</button>
+          </form>
+
+          <div id="item-update-message"></div>
         </li>
+
+        <li>
+            <form id="deleteItem">
+                <input name="list[item]" type="text" placeholder="Item iD here" required>
+                <button>Delete</button>
+          </form>
+          <div id="item-delete-message"></div>
+      </li>
+
+          <br>
+          <hr>
+          <br>
+
+        <li>
+          <form id="changePassword">
+            <input name="passwords[old]" type="password" placeholder="old password" required>
+            <br>
+            <input name="passwords[new]" type="password" placeholder="new password" required>
+            <br>
+            <br>
+            <button>Change Password</button>
+              <br>
+          </form>
+          <div id="changePass-success"></div>
+          <div id="changePass-success-message"></div>
+          <div class="error-message"></div>
+      </li>
+
     </ul>
 
+    <button id="index-list">View List</button>
+  <div id="viewItems"></div>
+
+<!-- USER AUTH FORMS -->
       <div class="mainbox">
-      <div class="shadow p-3 mb-5 bg-white" id="mainboxchild">
+
           <form id="signUp">
             <input name="credentials[email]" type="text" placeholder="Email" required>
             <br>
@@ -49,6 +90,10 @@
             <br>
             <br>
             <button>Sign Up</button>
+              <br>
+            <div id="signUp-success"></div>
+            <div id="signUp-success-message"></div>
+            <div class="error-message"></div>
           </form>
 
           <br>
@@ -60,16 +105,13 @@
             <br>
             <br>
             <button>Sign In</button>
+              <br>
+            <div id="signIn-success"></div>
+            <div id="signIn-success-message"></div>
+            <div class="error-message"></div>
           </form>
 
         </div>
-      </div>
-
-      <div id="viewBox">
-      <div class="shadow p-3 mb-5 bg-white" id="viewItem">
-          <h3>My List</h3>
-      </div>
-      </div>
 
     </body>
 </html>
