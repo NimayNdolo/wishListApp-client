@@ -2,31 +2,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 
 body {
-  background: rgb(23,190,187);
-  background: linear-gradient(311deg, rgba(23,190,187,1) 50%, rgba(255,255,255,1) 100%);
+  background-image: url("public/wishBackground.png");
 }
 
-.shadow {
-  width: 700px;
+form {
+  width: 50%;
 }
 
-.mainbox {
-  display: flex;
-  margin-left: 30%;
+button {
+  background: rgba(9, 11, 10, .3);
+  border: none;
+  color: white;
 }
 
-#mainboxchild {
-  background: rgba(205, 83, 52, .4);
-}
-
-.maintitle {
-  font-family: 'Prata', serif;
-  font-size: 100px;
-  margin-left: 27%;
+nav {
+  display: inline-block;
+  margin-left: 77%;
 }
 
 input {
-  width: 300px;
+  width: 22vw;
+  border: none;
 }
 
 ul {
@@ -34,19 +30,72 @@ ul {
   display: inline-block;
 }
 
+.mainbox {
+  margin: auto;
+  width: 33%;
+  border: solid white 5px;
+  padding: 5vw;
+  background: rgba(255, 255, 255, .3);
+}
+
+.maintitle {
+  font-family: 'Prata', serif;
+  font-size: 8vw;
+  padding-top: 2vw;
+  margin: auto;
+  text-align: center;
+  color: white;
+}
+
 .viewBox {
   padding: 200px;
   margin-left: 50%;
 }
 
-#viewItems {
-  display: flex;
-  flex-flow: row-wrap;
-  width: 80vw;
-}
-
 .items-view {
-  border: solid 1px red;
+  border-bottom: solid 2px blue;
   padding: 20px;
   width: 30vw;
+}
+
+#viewItems {
+  margin-left: 40%;
+  margin-top: -90px;
+  display: block;
+  width: 50vw;
+  border: solid white 5px;
+  padding: 3vw;
+  background: rgba(255, 255, 255, .3);
+  text-align: center;
+}
+
+#index-list {
+  margin-top: -100px;
+  margin-left: 40%;
+}
+
+#mainboxchild {
+  background: rgba(205, 83, 52, .4);
+}
+
+#addItem {
+  margin-left: 10%;
+}
+
+#changePassword {
+  margin: auto;
+  width: 33%;
+  border: solid white 5px;
+  padding: 5vw;
+  background: rgba(255, 255, 255, .3);
+}
+
+#changePass-success,
+#signout-success,
+#item-add-message,
+#item-update-message,
+#signUp-success,
+#error-message,
+#signIn-success {
+  margin-left: 45%;
 }

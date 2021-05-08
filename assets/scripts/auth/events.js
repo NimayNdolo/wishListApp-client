@@ -62,6 +62,16 @@ const onDeleteItem = function (event) {
     .catch(ui.onError)
 }
 
+const onUpdateItem = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  const id = formData.list.id
+  api.updateItem(id, formData)
+    .then(ui.onUpdateItemSuccess)
+    .catch(ui.onError)
+}
+
 module.exports = {
   onSignIn,
   onSignUp,
@@ -69,5 +79,6 @@ module.exports = {
   onViewAllItems,
   onChangePassword,
   onDeleteItem,
+  onUpdateItem,
   onAddItem
 }

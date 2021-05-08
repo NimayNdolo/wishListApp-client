@@ -2,7 +2,11 @@ const store = require('./../store')
 
 const onSignUpSuccess = function () {
   $('#signUp-success').text('Welcome!')
-  $('#signUp-success-message').addClass('success')
+
+  setTimeout(() =>
+    $('#signUp-success').text('')
+  , 5000)
+
   $('#signUp').trigger('reset')
   $('#signUp').hide()
   $('#changePassword').hide()
@@ -10,22 +14,30 @@ const onSignUpSuccess = function () {
 
 const onSignInSuccess = function (responseData) {
   $('#signIn-success').text('Signed In! Create a list!')
-  $('#signIn-success-message').addClass('success')
+
+  setTimeout(() =>
+    $('#signIn-success').text('')
+  , 5000)
+
   store.user = responseData.user
   $('#signIn').trigger('reset')
   $('#signIn').hide()
   $('#signUp').hide()
-  $('#deleteItem').show()
   $('#addItem').show()
-  $('#updateItem').show()
-  $('#changePassword').show()
   $('#signOut').show()
   $('#index-list').show()
+  $('.mainbox').hide()
+  $('#passChange').show()
+  $('#viewItems').show()
 }
 
 const onSignOutSuccess = function () {
   $('#signOut-success').text('Signed out!')
-  $('#signOut-success-message').addClass('success')
+
+  setTimeout(() =>
+    $('#signOut-success').text('')
+  , 5000)
+
   $('#signOut').hide()
   $('form').trigger('reset')
   $('#viewItem').hide()
@@ -35,19 +47,33 @@ const onSignOutSuccess = function () {
   $('#addItem').hide()
   $('#updateItem').hide()
   $('#changePassword').hide()
+  $('#viewItems').hide()
+  $('#index-list').hide()
+  $('.mainbox').show()
+  $('#viewItems').hide()
 }
 
 const onChangePassword = function () {
-  $('#changePass-success').text('Yay! Your password has been successfully changed!')
+  $('#changePass-success').text('Your password has been changed!')
 
   setTimeout(() =>
     $('#changePass-success').text('')
-  , 5000)
+  , 3000)
+
+  $('form').trigger('reset')
+  $('#changePassword').hide()
+  $('#viewItems').show()
+  $('#index-list').show()
+  $('#addItem').show()
 }
 
 const onAddItemSuccess = function (responseData) {
   $('#addItem').trigger('reset')
   $('#item-add-message').text("You've added a new item to your list!")
+
+  setTimeout(() =>
+    $('#item-add-message').text('')
+  , 5000)
 }
 
 const onViewItemSuccess = function (responseData) {
@@ -57,30 +83,43 @@ const onViewItemSuccess = function (responseData) {
   list.forEach(list => {
     listHtml += `
     <div class="items-view">
-        <h1>My List</h1>
-          <br>
         <h4>item: ${list.item}</h4>
         <p>ID: ${list._id}</p>
         <button class='delete-button' data-id= ${list._id}>Delete</button>
         <button class='edit-button'>Edit</button>
     </div>
+    <div id="item-delete-message"></div>
     `
   })
   $('#viewItems').html(listHtml)
 }
 
-const onUpdateItem = function () {
-  $('#updateItem').hide()
+const onUpdateItemSuccess = function () {
   $('form').trigger('reset')
+  $('#item-update-message').text('Updated! Click, "View List," to see change.')
+
+  setTimeout(() =>
+    $('#item-update-message').text('')
+  , 5000)
+
+  $('#updateItem').hide()
 }
 
 const onDeleteItemSuccess = function () {
-$('#item-delete-message').text("Deleted! Let's add something else!")
+  $('#item-delete-message').text('Deleted! Click, "View List," to see change.')
+
+  setTimeout(() =>
+    $('#item-delete-message').text('')
+  , 5000)
 }
 
 const onError = function () {
-  $('.error-message').text('Please try again.')
-  $('.error-message').addClass('failure')
+  $('.error-message').text('Error. Please try again.')
+
+  setTimeout(() =>
+    $('.error-message').text('')
+  , 5000)
+
   $('form').trigger('reset')
 }
 
@@ -92,6 +131,6 @@ module.exports = {
   onViewItemSuccess,
   onChangePassword,
   onDeleteItemSuccess,
-  onUpdateItem,
+  onUpdateItemSuccess,
   onError
 }

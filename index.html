@@ -14,53 +14,47 @@
       <br>
 
       <h1 class="maintitle">W I S H L I S T Y</h1>
+      <div id="changePass-success"></div>
+      <div id="signout-success"></div>
+      <div id="item-add-message"></div>
+      <div id="item-update-message"></div>
+      <div id="signUp-success"></div>
+      <div class="error-message"></div>
+      <div id="signIn-success"></div>
 
-      <ul class="navbar">
-        <li><button id="signOut">Sign Out</button></li>
-        <div id="signout-success"></div>
-        <div id="signout-success-message"></div>
-        <div class="error-message"></div>
-      </ul>
+      <nav>
+        <button id="signOut" class="signOutButton">Sign Out</button>
+        <button id="passChange" class="passChangeButton">Change Password</button>
+      </nav>
 
       <br>
 
 <!-- USER ITEM FORMS -->
 
-      <ul>
-          <li>
+<button id="index-list">View List</button>
+
               <form id="addItem">
                   <input name="list[item]" type="text" placeholder="Add to Your List!" required>
                   <button id="add">add</button>
                 </form>
 
-                <div id="item-add-message"></div>
-          </li>
+            <form id="updateItem">
+              <input name="list[id]" type="text" placeholder="item ID" required>
+              <input name="list[item]" type="text" placeholder="item name" required>
+              <button>update</button>
+            </form>
 
-        <li>
-          <form id="updateItem">
-            <input name="list[id]" type="text" placeholder="item ID" required>
-            <input name="list[item]" type="text" placeholder="item name" required>
-            <button>update</button>
-          </form>
-
-          <div id="item-update-message"></div>
-        </li>
-
-        <li>
             <form id="deleteItem">
                 <input name="list[item]" type="text" placeholder="Item iD here" required>
                 <button>Delete</button>
           </form>
-          <div id="item-delete-message"></div>
-      </li>
 
           <br>
-          <hr>
           <br>
 
-        <li>
           <form id="changePassword">
             <input name="passwords[old]" type="password" placeholder="old password" required>
+            <br>
             <br>
             <input name="passwords[new]" type="password" placeholder="new password" required>
             <br>
@@ -68,15 +62,9 @@
             <button>Change Password</button>
               <br>
           </form>
-          <div id="changePass-success"></div>
-          <div id="changePass-success-message"></div>
-          <div class="error-message"></div>
-      </li>
 
-    </ul>
-
-    <button id="index-list">View List</button>
-  <div id="viewItems"></div>
+  <div id="viewItems">
+  </div>
 
 <!-- USER AUTH FORMS -->
       <div class="mainbox">
@@ -84,16 +72,15 @@
           <form id="signUp">
             <input name="credentials[email]" type="text" placeholder="Email" required>
             <br>
+            <br>
             <input name="credentials[password]" type="password" placeholder="Password" required>
+            <br>
             <br>
             <input name="credentials[password_confirmation]" type="password" placeholder="Re-type password" required>
             <br>
             <br>
             <button>Sign Up</button>
               <br>
-            <div id="signUp-success"></div>
-            <div id="signUp-success-message"></div>
-            <div class="error-message"></div>
           </form>
 
           <br>
@@ -101,14 +88,12 @@
           <form id="signIn">
             <input name="credentials[email]" type="text" placeholder="Email" required>
             <br>
+            <br>
             <input name="credentials[password]" type="password" placeholder="Password" required>
             <br>
             <br>
             <button>Sign In</button>
               <br>
-            <div id="signIn-success"></div>
-            <div id="signIn-success-message"></div>
-            <div class="error-message"></div>
           </form>
 
         </div>
