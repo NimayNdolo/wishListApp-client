@@ -1,10 +1,10 @@
-#3WISHLIST app
+## WISHLIST app
 
-##SUMMARY
+## SUMMARY
 
 -- At the bare bones of it, this is a wishlist application. The first build will be focused on the sole experience of an individual user.
 
-##USER STORIES
+## USER STORIES
 
 My user will be able to create a new account via sign-up form.
 
@@ -27,7 +27,7 @@ My user will be able to update list items.
 My user will be able to sign out if they choose.
 
 
-##WIREFRAME
+## WIREFRAME
 
 ![lowFidWireFrame](https://user-images.githubusercontent.com/15839929/117576184-db02e780-b0b2-11eb-8a00-7a647bfaa9c0.png)
 
