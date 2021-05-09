@@ -1,6 +1,6 @@
 ## WISHLIST App Link
 
-nimayndolo.github.io/wishlistapp-client/
+[nimayndolo.github.io/wishlistapp-client/](url)
 
 ## SUMMARY
 
