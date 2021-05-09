@@ -1,5 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
-@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400&display=swap');
 
 body {
   background-image: url("public/wishBackground.png");
@@ -7,12 +8,15 @@ body {
 
 form {
   width: 50%;
+  font-family: 'Archivo', sans-serif;
+  color: black;
 }
 
 button {
   background: rgba(9, 11, 10, .3);
   border: none;
   color: white;
+  font-family: 'Archivo', sans-serif;
 }
 
 nav {
@@ -30,16 +34,22 @@ ul {
   display: inline-block;
 }
 
+p {
+  color: rgba(0, 0, 0, .5)
+}
+
 .mainbox {
   margin: auto;
+  margin-top: -40px;
   width: 33%;
   border: solid white 5px;
   padding: 5vw;
   background: rgba(255, 255, 255, .3);
+  border-radius: 25px;
 }
 
 .maintitle {
-  font-family: 'Prata', serif;
+  font-family: 'Krona One', sans-serif;
   font-size: 8vw;
   padding-top: 2vw;
   margin: auto;
@@ -53,24 +63,32 @@ ul {
 }
 
 .items-view {
-  border-bottom: solid 2px blue;
+  border-bottom: dashed 4px blue;
   padding: 20px;
   width: 30vw;
+  font-family: 'Archivo', sans-serif;
+}
+
+.error-message {
+  margin-left: 45%;
+  font-family: 'Archivo', sans-serif;
+  font-size: 20px;
+  color: red;
 }
 
 #viewItems {
   margin-left: 40%;
-  margin-top: -90px;
+  margin-top: -65px;
   display: block;
   width: 50vw;
   border: solid white 5px;
   padding: 3vw;
   background: rgba(255, 255, 255, .3);
-  text-align: center;
+  border-radius: 25px;
 }
 
 #index-list {
-  margin-top: -100px;
+  margin-top: -90px;
   margin-left: 40%;
 }
 
@@ -79,6 +97,10 @@ ul {
 }
 
 #addItem {
+  margin-left: 10%;
+}
+
+#updateItem {
   margin-left: 10%;
 }
 
@@ -95,7 +117,10 @@ ul {
 #item-add-message,
 #item-update-message,
 #signUp-success,
-#error-message,
-#signIn-success {
-  margin-left: 45%;
+#signIn-success,
+#item-delete-message {
+  text-align: center;
+  font-family: 'Archivo', sans-serif;
+  font-size: 20px;
+  color: red;
 }

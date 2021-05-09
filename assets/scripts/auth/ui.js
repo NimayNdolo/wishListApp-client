@@ -1,11 +1,11 @@
 const store = require('./../store')
 
 const onSignUpSuccess = function () {
-  $('#signUp-success').text('Welcome!')
+  $('#signUp-success').text('Account created! Sign in.')
 
   setTimeout(() =>
     $('#signUp-success').text('')
-  , 5000)
+  , 3000)
 
   $('#signUp').trigger('reset')
   $('#signUp').hide()
@@ -17,7 +17,7 @@ const onSignInSuccess = function (responseData) {
 
   setTimeout(() =>
     $('#signIn-success').text('')
-  , 5000)
+  , 3000)
 
   store.user = responseData.user
   $('#signIn').trigger('reset')
@@ -36,7 +36,7 @@ const onSignOutSuccess = function () {
 
   setTimeout(() =>
     $('#signOut-success').text('')
-  , 5000)
+  , 3000)
 
   $('#signOut').hide()
   $('form').trigger('reset')
@@ -51,6 +51,7 @@ const onSignOutSuccess = function () {
   $('#index-list').hide()
   $('.mainbox').show()
   $('#viewItems').hide()
+  $('#passChange').hide()
 }
 
 const onChangePassword = function () {
@@ -69,11 +70,11 @@ const onChangePassword = function () {
 
 const onAddItemSuccess = function (responseData) {
   $('#addItem').trigger('reset')
-  $('#item-add-message').text("You've added a new item to your list!")
+  $('#item-add-message').text('Added! Click, "View List," to see your item!')
 
   setTimeout(() =>
     $('#item-add-message').text('')
-  , 5000)
+  , 3000)
 }
 
 const onViewItemSuccess = function (responseData) {
@@ -83,14 +84,22 @@ const onViewItemSuccess = function (responseData) {
   list.forEach(list => {
     listHtml += `
     <div class="items-view">
-        <h4>item: ${list.item}</h4>
-        <p>ID: ${list._id}</p>
-        <button class='delete-button' data-id= ${list._id}>Delete</button>
-        <button class='edit-button'>Edit</button>
+          <h3>${list.item}</h3>
+          <p>ID: ${list._id}</p>
+          <button class='delete-button' data-id= ${list._id}>Delete</button>
+          <button class='edit-button'>Edit</button>
     </div>
-    <div id="item-delete-message"></div>
     `
   })
+
+  if (listHtml === '') {
+    $('.error-message').text('No items yet. Add to your list!')
+
+    setTimeout(() =>
+      $('.error-message').text('')
+    , 5000)
+  }
+
   $('#viewItems').html(listHtml)
 }
 
