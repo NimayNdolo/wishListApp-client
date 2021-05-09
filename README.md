@@ -29,4 +29,5 @@ My user will be able to sign out if they choose.
 
 ##WIREFRAME
 
-public/lowFidWireFrame.png
+![lowFidWireFrame](https://user-images.githubusercontent.com/15839929/117576184-db02e780-b0b2-11eb-8a00-7a647bfaa9c0.png)
+
