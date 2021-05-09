@@ -33,3 +33,8 @@ My user will be able to sign out if they choose.
 
 ![lowFidWireFrame](https://user-images.githubusercontent.com/15839929/117576184-db02e780-b0b2-11eb-8a00-7a647bfaa9c0.png)
 
+## ERD
+
+![ERD Diagram](https://user-images.githubusercontent.com/15839929/117576574-7c3e6d80-b0b4-11eb-93cd-eea666723fe1.jpg)
+
+
