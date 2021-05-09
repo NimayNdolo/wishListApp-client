@@ -8,7 +8,7 @@ const onSignUpSuccess = function () {
   , 3000)
 
   $('#signUp').trigger('reset')
-  $('#signUp').hide()
+  // $('#signUp').hide()
   $('#changePassword').hide()
 }
 
@@ -52,6 +52,8 @@ const onSignOutSuccess = function () {
   $('.mainbox').show()
   $('#viewItems').hide()
   $('#passChange').hide()
+  $('form').trigger('reset')
+  $('#viewItems').html('')
 }
 
 const onChangePassword = function () {
@@ -93,7 +95,8 @@ const onViewItemSuccess = function (responseData) {
   })
 
   if (listHtml === '') {
-    $('.error-message').text('No items yet. Add to your list!')
+    // $('.error-message').text('No items yet. Add to your list!')
+    listHtml = 'No items yet. Add to your list!'
 
     setTimeout(() =>
       $('.error-message').text('')
