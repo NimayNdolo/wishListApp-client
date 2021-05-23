@@ -13,6 +13,11 @@
     <body>
       <br>
 
+      <nav>
+        <button id="signOut" class="signOutButton">Sign Out</button>
+        <button id="passChange" class="passChangeButton">Change Password</button>
+      </nav>
+
       <h1 class="maintitle">W I S H L I S T Y</h1>
       <div id="changePass-success"></div>
       <div id="signout-success"></div>
@@ -23,28 +28,25 @@
       <div id="signIn-success"></div>
       <div id="item-delete-message"></div>
 
-      <nav>
-        <button id="signOut" class="signOutButton">Sign Out</button>
-        <button id="passChange" class="passChangeButton">Change Password</button>
-      </nav>
-
       <br>
 
 <!-- USER ITEM FORMS -->
 
-<button id="index-list">View List</button>
-
               <form id="addItem">
-                  <input name="list[item]" type="text" placeholder="Add to Your List!" required>
+                  <input class="add" name="list[item]" type="text" placeholder="Add to Your List!" required>
                   <button id="add">add</button>
-                </form>
+              </form>
+
+              <br>
+
+              <button id="index-list">View List</button>
 
                 <br>
                 <br>
                 <br>
 
             <form id="updateItem">
-              <input name="list[id]" type="text" placeholder="item ID" required>
+              <input class="update" name="list[id]" type="text" placeholder="item ID" required>
               <br>
               <br>
               <input name="list[item]" type="text" placeholder="item name" required>
@@ -52,7 +54,7 @@
             </form>
 
             <form id="deleteItem">
-                <input name="list[item]" type="text" placeholder="Item iD here" required>
+                <input class="delete" name="list[item]" type="text" placeholder="Item iD here" required>
                 <button>Delete</button>
           </form>
 
