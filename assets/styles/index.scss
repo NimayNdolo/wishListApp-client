@@ -8,6 +8,7 @@ body {
 
 form {
   width: 50%;
+  margin-left: 10%;
   font-family: 'Archivo', sans-serif;
   color: black;
 }
@@ -25,8 +26,8 @@ nav {
 }
 
 input {
-  width: 22vw;
-  border: none;
+  width: 165%;
+  border: black solid 3px;
 }
 
 ul {
@@ -43,8 +44,8 @@ p {
   margin-top: -40px;
   width: 33%;
   border: dotted black 5px;
-  padding: 5vw;
-  background: rgba(146, 190, 255, .3);
+  padding: 2vw;
+  background: rgba(255, 178, 182, .9);
   border-radius: 25px;
   min-width: 350px;
 }
