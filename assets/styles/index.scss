@@ -79,15 +79,19 @@ p {
   color: red;
 }
 
-.add {
+.add,
+.update,
+.update2,
+.change,
+.change2 {
   width: 50%;
 }
 
 #viewItems {
   margin-left: 40%;
   width: 50vw;
-  margin-top: -190px;
-  border: solid black 5px;
+  margin-top: -230px;
+  border: dotted black 5px;
   padding: 3vw;
   background: rgba(255, 178, 182, .9);
   border-radius: 25px;
@@ -113,9 +117,11 @@ p {
 #changePassword {
   margin: auto;
   width: 33%;
-  border: solid black 5px;
-  padding: 5vw;
-  background: rgba(255, 255, 255, .3);
+  border: dotted black 5px;
+  padding: 2vw;
+  background: rgba(255, 178, 182, .9);
+  border-radius: 25px;
+  align-items: center;
 }
 
 #changePass-success,

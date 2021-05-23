@@ -88,8 +88,9 @@ const onViewItemSuccess = function (responseData) {
     <div class="items-view">
           <h3>${list.item}</h3>
           <p>ID: ${list._id}</p>
+          <button class='comment-button' data-id= ${list._id}>Comment</button>
           <button class='delete-button' data-id= ${list._id}>Delete</button>
-          <button class='edit-button'>Edit</button>
+          <button class='edit-button' data-id= ${list._id}>Edit</button>
     </div>
     `
   })
