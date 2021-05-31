@@ -94,6 +94,19 @@ const deleteItem = function (id) {
   })
 }
 
+// COMMENT
+
+const createComment = function (formData) {
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/lists/',
+    data: formData,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -103,5 +116,6 @@ module.exports = {
   updateItem,
   addItem,
   deleteItem,
-  viewAllItems
+  viewAllItems,
+  createComment
 }

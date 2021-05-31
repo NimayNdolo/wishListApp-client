@@ -72,6 +72,15 @@ const onUpdateItem = function (event) {
     .catch(ui.onError)
 }
 
+const onCreateComment = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.createComment(formData)
+    .then(ui.onCreateCommentSuccess)
+    .catch(ui.onError)
+}
+
 module.exports = {
   onSignIn,
   onSignUp,
@@ -80,5 +89,6 @@ module.exports = {
   onChangePassword,
   onDeleteItem,
   onUpdateItem,
-  onAddItem
+  onAddItem,
+  onCreateComment
 }

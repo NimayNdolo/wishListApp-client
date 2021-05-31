@@ -81,13 +81,14 @@ const onAddItemSuccess = function (responseData) {
 
 const onViewItemSuccess = function (responseData) {
   const list = responseData.list
-  console.log(responseData)
+  const comments = responseData.list.comments
   let listHtml = ''
   list.forEach(list => {
     listHtml += `
     <div class="items-view">
           <h3>${list.item}</h3>
           <p>ID: ${list._id}</p>
+          <p class="comment">    - ${list.comments}</p>
           <button class='comment-button' data-id= ${list._id}>Comment</button>
           <button class='delete-button' data-id= ${list._id}>Delete</button>
           <button class='edit-button' data-id= ${list._id}>Edit</button>
@@ -136,6 +137,26 @@ const onError = function () {
   $('form').trigger('reset')
 }
 
+const onCreateCommentSuccess = function (responseData) {
+  const comment = responseData.comment
+  console.log(responseData)
+  let commentHtml = ''
+  comment.forEach(list => {
+    commentHtml += `
+    <div class="comment">
+          <p>- ${comment._id}</p>
+    </div>
+    `
+  })
+
+  $('#addItem').trigger('reset')
+  $('#item-add-message').text('Added! Click, "View List," to see your item!')
+
+  setTimeout(() =>
+    $('#item-add-message').text('')
+  , 3000)
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignInSuccess,
@@ -145,5 +166,6 @@ module.exports = {
   onChangePassword,
   onDeleteItemSuccess,
   onUpdateItemSuccess,
+  onCreateCommentSuccess,
   onError
 }

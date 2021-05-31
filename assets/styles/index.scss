@@ -83,7 +83,8 @@ p {
 .update,
 .update2,
 .change,
-.change2 {
+.change2,
+.addComm {
   width: 50%;
 }
 
@@ -106,7 +107,7 @@ p {
   background: rgba(205, 83, 52, .4);
 }
 
-#addItem {
+#addItem, #addComment {
   margin-left: 10%;
 }
 

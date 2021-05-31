@@ -6,6 +6,7 @@ $(() => {
   $('#addItem').hide()
   $('#deleteItem').hide()
   $('#updateItem').hide()
+  $('#addComment').hide()
   $('#signOut').hide()
   $('#viewItems').hide()
   $('#changePassword').hide()
@@ -20,8 +21,18 @@ $(() => {
   $('#viewItems').on('click', '.delete-button', events.onDeleteItem)
   $('#index-list').on('click', events.onViewAllItems)
 
+  $('#addComment').on('submit', events.onCreateComment, function (event) {
+    event.preventDefault()
+    $('form').trigger('reset')
+    $('#addComment').hide()
+  })
+
   $('#viewItems').on('click', '.edit-button', function () {
     $('#updateItem').show()
+  })
+
+  $('#viewItems').on('click', '.comment-button', function () {
+    $('#addComment').show()
   })
 
   $('#passChange').on('click', function () {
