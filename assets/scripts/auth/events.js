@@ -4,6 +4,8 @@ const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 
+// AUTH
+
 const onSignIn = function (event) {
   event.preventDefault()
   const form = event.target
@@ -32,11 +34,12 @@ const onChangePassword = function (event) {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  console.log(formData)
   api.changePassword(formData)
     .then(ui.onChangePassword)
     .catch(ui.onError)
 }
+
+// LIST
 
 const onViewAllItems = function (event) {
   event.preventDefault()
@@ -72,12 +75,28 @@ const onUpdateItem = function (event) {
     .catch(ui.onError)
 }
 
+// COMMENTS
+
 const onCreateComment = function (event) {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  api.createComment(formData)
+  const id = formData.list.id
+  console.log(formData)
+  api.createComment(formData, id)
     .then(ui.onCreateCommentSuccess)
+    .catch(ui.onError)
+}
+
+const onDeleteComment = function (event) {
+  event.preventDefault()
+  const id = $(event.target).data('id')
+  const listid = $(event.target).data('listid')
+  console.log(id, listid)
+  console.log($(event.target).data('id'))
+  console.log($(event.target).data('listid'))
+  api.deleteComment(id, listid)
+    .then(ui.onDeleteCommentSuccess)
     .catch(ui.onError)
 }
 
@@ -90,5 +109,6 @@ module.exports = {
   onDeleteItem,
   onUpdateItem,
   onAddItem,
-  onCreateComment
+  onCreateComment,
+  onDeleteComment
 }

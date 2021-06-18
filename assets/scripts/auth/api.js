@@ -96,11 +96,26 @@ const deleteItem = function (id) {
 
 // COMMENT
 
-const createComment = function (formData) {
+// CREATE
+const createComment = function (formData, id) {
+  console.log(formData)
   return $.ajax({
     method: 'POST',
-    url: config.apiUrl + '/lists/',
+    url: config.apiUrl + '/comment/' + id,
     data: formData,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    formData: formData
+  })
+}
+
+// DELETE
+
+const deleteComment = function (commentid, listId) {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/comment/' + commentid + '/' + listId,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
@@ -117,5 +132,6 @@ module.exports = {
   addItem,
   deleteItem,
   viewAllItems,
-  createComment
+  createComment,
+  deleteComment
 }

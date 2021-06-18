@@ -81,23 +81,26 @@ const onAddItemSuccess = function (responseData) {
 
 const onViewItemSuccess = function (responseData) {
   const list = responseData.list
-  const comments = responseData.list.comments
   let listHtml = ''
   list.forEach(list => {
     listHtml += `
     <div class="items-view">
           <h3>${list.item}</h3>
           <p>ID: ${list._id}</p>
-          <p class="comment">    - ${list.comments}</p>
           <button class='comment-button' data-id= ${list._id}>Comment</button>
           <button class='delete-button' data-id= ${list._id}>Delete</button>
           <button class='edit-button' data-id= ${list._id}>Edit</button>
+
+          <br>
+          <br>
+              <p class="comment">${list.comments.map(comment => {
+                return `-- ${comment.content} <button class='delete-comment' data-listid=${list._id} data-id=${comment._id}>Delete</button><br><br>`
+              }).join(' ')}</p>
     </div>
     `
   })
 
   if (listHtml === '') {
-    // $('.error-message').text('No items yet. Add to your list!')
     listHtml = 'No items yet. Add to your list!'
 
     setTimeout(() =>
@@ -138,22 +141,22 @@ const onError = function () {
 }
 
 const onCreateCommentSuccess = function (responseData) {
-  const comment = responseData.comment
-  console.log(responseData)
-  let commentHtml = ''
-  comment.forEach(list => {
-    commentHtml += `
-    <div class="comment">
-          <p>- ${comment._id}</p>
-    </div>
-    `
-  })
-
+  console.log('comment has been created')
   $('#addItem').trigger('reset')
-  $('#item-add-message').text('Added! Click, "View List," to see your item!')
+  $('#commentBox').show()
+  $('#comment-add-message').text('Comment Added! Click, "View List," to see your item!')
 
   setTimeout(() =>
-    $('#item-add-message').text('')
+    $('#comment-add-message').text('')
+  , 3000)
+}
+
+const onDeleteCommentSuccess = function () {
+  console.log('comment has been deleted')
+  $('#deleteComment').trigger('reset')
+  $('#comment-delete-message').text('Comment Deleted! Click, "View List," to see your item!')
+  setTimeout(() =>
+    $('#comment-delete-message').text('')
   , 3000)
 }
 
@@ -167,5 +170,6 @@ module.exports = {
   onDeleteItemSuccess,
   onUpdateItemSuccess,
   onCreateCommentSuccess,
+  onDeleteCommentSuccess,
   onError
 }

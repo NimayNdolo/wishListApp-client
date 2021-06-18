@@ -27,6 +27,8 @@
       <div class="error-message"></div>
       <div id="signIn-success"></div>
       <div id="item-delete-message"></div>
+      <div id="comment-add-message"></div>
+      <div id="comment-delete-message"></div>
 
       <br>
 
@@ -34,21 +36,33 @@
 
               <form id="addItem">
                   <input class="add" name="list[item]" type="text" placeholder="Add to Your List!" required>
-                  <br>
-                  <br>
+                    <br>
+                    <br>
                   <button id="add">add</button>
               </form>
 
               <br>
 
               <form id="addComment">
-                  <input class="addComm" name="list[item]" type="text" placeholder="Comment" required>
-                  <br>
-                  <br>
+                  <input class="addComm" name="list[comments]" type="text" placeholder="Add Comment here." required>
+                    <br>
+                    <br>
+                  <input class="addComm2" name="list[id]" type="text" placeholder="Enter ID of item you're commenting." required>
+                    <br>
+                    <br>
                   <button id="addC">send</button>
               </form>
 
               <br>
+
+              <!-- <form id="deleteComment">
+                  <input class="deleteComm" name="list[comments]" type="text" placeholder="Delete Comment with ID." required>
+                    <br>
+                    <br>
+                  <button>delete</button>
+            </form> -->
+
+                <br>
 
               <button id="index-list">View List</button>
 
@@ -71,16 +85,16 @@
                 <button>Delete</button>
           </form>
 
-          <br>
-          <br>
+            <br>
+            <br>
 
           <form id="changePassword">
             <input class="change" name="passwords[old]" type="password" placeholder="old password" required>
-            <br>
-            <br>
+              <br>
+              <br>
             <input class="change2" name="passwords[new]" type="password" placeholder="new password" required>
-            <br>
-            <br>
+              <br>
+              <br>
             <button>Change Password</button>
               <br>
           </form>
@@ -93,14 +107,14 @@
 
           <form id="signUp">
             <input name="credentials[email]" type="text" placeholder="Email" required>
-            <br>
-            <br>
+              <br>
+              <br>
             <input name="credentials[password]" type="password" placeholder="Password" required>
-            <br>
-            <br>
+              <br>
+              <br>
             <input name="credentials[password_confirmation]" type="password" placeholder="Re-type password" required>
-            <br>
-            <br>
+              <br>
+              <br>
             <button>Sign Up</button>
               <br>
           </form>
@@ -109,11 +123,11 @@
 
           <form id="signIn">
             <input name="credentials[email]" type="text" placeholder="Email" required>
-            <br>
-            <br>
+              <br>
+              <br>
             <input name="credentials[password]" type="password" placeholder="Password" required>
-            <br>
-            <br>
+              <br>
+              <br>
             <button>Sign In</button>
               <br>
           </form>

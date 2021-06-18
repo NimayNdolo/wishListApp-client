@@ -66,7 +66,6 @@ p {
 }
 
 .items-view {
-  border-bottom: dashed 4px blue;
   padding: 20px;
   width: 30vw;
   font-family: 'Archivo', sans-serif;
@@ -84,7 +83,9 @@ p {
 .update2,
 .change,
 .change2,
-.addComm {
+.addComm,
+.addComm2,
+.deleteComm {
   width: 50%;
 }
 
@@ -96,6 +97,10 @@ p {
   padding: 3vw;
   background: rgba(255, 178, 182, .9);
   border-radius: 25px;
+}
+
+#commentBox {
+  border-bottom: dashed 4px blue;
 }
 
 #index-list {
