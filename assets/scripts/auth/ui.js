@@ -94,7 +94,7 @@ const onViewItemSuccess = function (responseData) {
           <br>
           <br>
               <p class="comment">${list.comments.map(comment => {
-                return `-- ${comment.content} <button class='delete-comment' data-listid=${list._id} data-id=${comment._id}>Delete</button><br><br>`
+                return `-- ${comment.content} &nbsp &nbsp &nbsp &nbsp <button class='delete-comment' data-listid=${list._id} data-id=${comment._id}>Delete</button><br><br>`
               }).join(' ')}</p>
     </div>
     `

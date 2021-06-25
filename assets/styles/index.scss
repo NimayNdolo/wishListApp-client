@@ -45,10 +45,10 @@ p {
   margin: auto;
   margin-top: -10%;
   width: 33%;
-  border: dotted white 5px;
+  // border: dotted white 5px;
   padding: 2vw;
   background: rgba(255, 255, 255, .3);
-  border-radius: 25px;
+  // border-radius: 25px;
   min-width: 350px;
 }
 
@@ -90,14 +90,18 @@ p {
   width: 50%;
 }
 
+.comment {
+  color: rgb(64, 0, 255);
+}
+
 #viewItems {
   margin-left: 40%;
   width: 50vw;
   margin-top: -230px;
-  border: dotted white 5px;
+  // border: dotted white 5px;
   padding: 3vw;
   background: rgba(255, 255, 255, .3);
-  border-radius: 25px;
+  // border-radius: 25px;
 }
 
 #commentBox {
